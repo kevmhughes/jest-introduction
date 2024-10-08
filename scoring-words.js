@@ -10,12 +10,25 @@ function high(x) {
     // PRIMERO: Darle un valor númerico a cada letra. 
     //Se me ocurre hacer un array con las letras donde su valor sea su posición en el index +1
 
-    const letters = ['a', , 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'ñ', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+    const letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'ñ', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
+
+    console.log(letters.indexOf('b'))
     // Al intentar poner esto dentro de una variable descubro metodo bind(). VER DESPUES
 
     //SEGUNDO separar las palabras de una frase y volverlas elementos de un array
     let arrayPhrase = x.split(" ");
+
+    const vowels = ["a", "e", "i", "o", "u"];
+
+    const allVowels = arrayPhrase.find(word => 
+        vowels.every(vowel => word.includes(vowel))
+    );
+
+    if (allVowels) {
+        return allVowels
+    }
+
 
     //TERCERO Creo las varianbles necesarias 
     // Una para acumular los puntos de cada
